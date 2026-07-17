@@ -1,0 +1,77 @@
+.code-section {
+  padding: 6rem 0;
+}
+
+.code-editor-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #2d2d2d;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.file-name {
+  color: #858585;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+.copy-btn {
+  background: transparent;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.copy-btn:hover {
+  color: #fff;
+}
+
+.code-content {
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.code-content pre {
+  margin: 0;
+}
+
+.code-content code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d4d4d4;
+  white-space: pre;
+}
+
+/* Syntax Highlighting Mock */
+.code-content code {
+  background: transparent;
+}

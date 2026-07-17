@@ -1,0 +1,85 @@
+.floating-shapes-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-shape {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shape-inner {
+  opacity: 0.15;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-weight: 800;
+  user-select: none;
+  text-shadow: 0 0 30px currentColor;
+  animation: floatIdle 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatIdle {
+  0% { transform: translateY(-10px) rotate(var(--rot)); }
+  100% { transform: translateY(10px) rotate(calc(var(--rot) + 5deg)); }
+}
+
+@keyframes floatIdleAlt {
+  0% { transform: translateY(10px) rotate(var(--rot)); }
+  100% { transform: translateY(-10px) rotate(calc(var(--rot) - 5deg)); }
+}
+
+.shape-brackets {
+  font-size: 80px;
+  color: #3b82f6; /* Blue */
+  --rot: -15deg;
+}
+
+.shape-tags {
+  font-size: 60px;
+  color: #a855f7; /* Purple */
+  --rot: 20deg;
+  animation-name: floatIdleAlt;
+}
+
+.shape-parentheses {
+  font-size: 32px;
+  color: #ec4899; /* Pink */
+  --rot: -5deg;
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.shape-hash {
+  font-size: 32px;
+  color: #10b981; /* Emerald */
+  --rot: 5deg;
+  animation-name: floatIdleAlt;
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.shape-orb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
+  filter: blur(50px);
+  opacity: 0.6;
+  animation: floatIdle 8s ease-in-out infinite alternate;
+  --rot: 0deg;
+}
+
+/* Positions */
+.shape-pos-1 { top: 5%; left: 5%; }
+.shape-pos-2 { top: 15%; right: 5%; }
+.shape-pos-3 { bottom: 10%; left: 10%; }
+.shape-pos-4 { bottom: 15%; right: 15%; }
+.shape-pos-5 { top: 30%; left: 35%; }
+
+
